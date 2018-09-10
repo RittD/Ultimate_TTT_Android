@@ -1,0 +1,1994 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        app:titleTextColor="@color/whiteText"
+        app:titleTextAppearance="@style/Toolbar.TitleText" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar"
+        android:layout_marginLeft="@dimen/margin_small_very"
+        android:layout_marginStart="@dimen/margin_small_very"
+        android:layout_marginRight="@dimen/margin_small_very"
+        android:layout_marginEnd="@dimen/margin_small_very">
+
+        <!-- SCOREBOARD -->
+        <FrameLayout
+            android:id="@+id/scoreboard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryDark"
+            android:layout_marginTop="@dimen/margin">
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+
+                >
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_small_very"
+                    android:background="@color/background_color"
+                    >
+
+                    <TextView
+                        android:id="@+id/player1"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="3"
+                        android:text='@string/name_player_1'
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="@dimen/text_size"
+                        android:textStyle="bold"
+                        android:maxLines="1"
+                        android:ellipsize="end"/>
+
+                    <TextView
+                        android:id="@+id/score1"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="@string/default_score"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="@dimen/text_size"
+                        android:textStyle="bold"
+                        android:textAlignment="center"/>
+
+                    <TextView
+                        android:id="@+id/player2"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="3"
+                        android:text="@string/name_player_2"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="@dimen/text_size"
+                        android:textStyle="bold"
+                        android:maxLines="1"
+                        android:scrollHorizontally="true"/>
+
+                    <TextView
+                        android:id="@+id/score2"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="@string/default_score"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="@dimen/text_size"
+                        android:textStyle="bold"
+                        android:textAlignment="center"/>
+                </TableRow>
+            </TableLayout>
+        </FrameLayout>
+
+
+        <!-- GAME FIELD -->
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/scoreboard"
+            android:id="@+id/constraintLayout"
+            android:layout_marginTop="@dimen/margin">     
+
+            <!-- Frame for the field -->
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TableLayout
+                    android:id="@+id/field"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/margin_small_very"
+                    android:weightSum="3">
+
+
+                    <!-- FIRST ROW-->
+                    <TableRow
+                        android:id="@+id/r1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:weightSum="3">
+
+
+                        <!--(1|1)-->
+                        <FrameLayout
+                            android:id="@+id/f1"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1">
+
+                            <ViewSwitcher
+                                android:id="@+id/v1"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_margin="@dimen/margin_small_very"
+                                android:background="@color/background_color">
+
+                                <TableLayout
+                                    android:id="@+id/a1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <TableRow
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1">
+
+                                        <TextView
+                                            android:id="@+id/a111"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:contentDescription="@string/content_description_111"
+                                            android:gravity="center"
+                                            android:soundEffectsEnabled="false"
+                                            android:onClick="inputUltimate"
+                                            android:textColor="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:layout_width="@dimen/separator_width"
+                                            android:layout_height="match_parent"
+                                            android:background="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:id="@+id/a112"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:contentDescription="@string/content_description_112"
+                                            android:gravity="center"
+                                            android:soundEffectsEnabled="false"
+                                            android:onClick="inputUltimate"
+                                            android:textColor="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:layout_width="@dimen/separator_width"
+                                            android:layout_height="match_parent"
+                                            android:background="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:id="@+id/a113"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:contentDescription="@string/content_description_113"
+                                            android:gravity="center"
+                                            android:soundEffectsEnabled="false"
+                                            android:onClick="inputUltimate"
+                                            android:textColor="@color/colorPrimaryDark" />
+                                    </TableRow>
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="@dimen/separator_width"
+                                        android:background="@color/colorPrimaryDark">
+
+                                    </TextView>
+
+                                    <TableRow
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1">
+
+                                        <TextView
+                                            android:id="@+id/a121"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:contentDescription="@string/content_description_121"
+                                            android:gravity="center"
+                                            android:soundEffectsEnabled="false"
+                                            android:onClick="inputUltimate"
+                                            android:textColor="@color/colorPrimaryDark"/>
+
+                                        <TextView
+                                            android:layout_width="@dimen/separator_width"
+                                            android:layout_height="match_parent"
+                                            android:background="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:id="@+id/a122"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:contentDescription="@string/content_description_122"
+                                            android:gravity="center"
+                                            android:soundEffectsEnabled="false"
+                                            android:onClick="inputUltimate"
+                                            android:textColor="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:layout_width="@dimen/separator_width"
+                                            android:layout_height="match_parent"
+                                            android:background="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:id="@+id/a123"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:contentDescription="@string/content_description_123"
+                                            android:gravity="center"
+                                            android:soundEffectsEnabled="false"
+                                            android:onClick="inputUltimate"
+                                            android:textColor="@color/colorPrimaryDark" />
+                                    </TableRow>
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="@dimen/separator_width"
+                                        android:background="@color/colorPrimaryDark">
+
+                                    </TextView>
+
+                                    <TableRow
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1">
+
+                                        <TextView
+                                            android:id="@+id/a131"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:contentDescription="@string/content_description_131"
+                                            android:gravity="center"
+                                            android:soundEffectsEnabled="false"
+                                            android:onClick="inputUltimate"
+                                            android:textColor="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:layout_width="@dimen/separator_width"
+                                            android:layout_height="match_parent"
+                                            android:background="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:id="@+id/a132"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:contentDescription="@string/content_description_132"
+                                            android:gravity="center"
+                                            android:soundEffectsEnabled="false"
+                                            android:onClick="inputUltimate"
+                                            android:textColor="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:layout_width="@dimen/separator_width"
+                                            android:layout_height="match_parent"
+                                            android:background="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:id="@+id/a133"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:contentDescription="@string/content_description_133"
+                                            android:gravity="center"
+                                            android:soundEffectsEnabled="false"
+                                            android:onClick="inputUltimate"
+                                            android:textColor="@color/colorPrimaryDark" />
+                                    </TableRow>
+
+                                </TableLayout>
+
+                                <TextView
+                                    android:id="@+id/t1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:contentDescription="@string/content_description_t1"
+                                    android:gravity="center"
+                                    android:soundEffectsEnabled="false"
+                                    android:onClick="inputClassic"
+                                    android:textColor="@color/colorPrimaryDark" />
+
+                            </ViewSwitcher>
+                        </FrameLayout>
+
+
+                        <TextView
+                            android:layout_width="@dimen/separator_width_big"
+                            android:layout_height="match_parent"
+                            android:background="@color/colorPrimaryDark" />
+
+
+                        <!--(1|2)-->
+                        <FrameLayout
+                            android:id="@+id/f2"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1">
+
+                            <ViewSwitcher
+                                android:id="@+id/v2"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_margin="@dimen/margin_small_very"
+                                android:background="@color/background_color">
+
+                                <TableLayout
+                                    android:id="@+id/a2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <TableRow
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1">
+
+                                        <TextView
+                                            android:id="@+id/a211"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:contentDescription="@string/content_description_211"
+                                            android:gravity="center"
+                                            android:soundEffectsEnabled="false"
+                                            android:onClick="inputUltimate"
+                                            android:textColor="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:layout_width="@dimen/separator_width"
+                                            android:layout_height="match_parent"
+                                            android:background="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:id="@+id/a212"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:contentDescription="@string/content_description_212"
+                                            android:gravity="center"
+                                            android:soundEffectsEnabled="false"
+                                            android:onClick="inputUltimate"
+                                            android:textColor="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:layout_width="@dimen/separator_width"
+                                            android:layout_height="match_parent"
+                                            android:background="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:id="@+id/a213"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:contentDescription="@string/content_description_213"
+                                            android:gravity="center"
+                                            android:soundEffectsEnabled="false"
+                                            android:onClick="inputUltimate"
+                                            android:textColor="@color/colorPrimaryDark" />
+                                    </TableRow>
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="@dimen/separator_width"
+                                        android:background="@color/colorPrimaryDark">
+
+                                    </TextView>
+
+                                    <TableRow
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1">
+
+                                        <TextView
+                                            android:id="@+id/a221"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:contentDescription="@string/content_description_221"
+                                            android:gravity="center"
+                                            android:soundEffectsEnabled="false"
+                                            android:onClick="inputUltimate"
+                                            android:textColor="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:layout_width="@dimen/separator_width"
+                                            android:layout_height="match_parent"
+                                            android:background="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:id="@+id/a222"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:contentDescription="@string/content_description_222"
+                                            android:gravity="center"
+                                            android:soundEffectsEnabled="false"
+                                            android:onClick="inputUltimate"
+                                            android:textColor="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:layout_width="@dimen/separator_width"
+                                            android:layout_height="match_parent"
+                                            android:background="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:id="@+id/a223"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:contentDescription="@string/content_description_223"
+                                            android:gravity="center"
+                                            android:soundEffectsEnabled="false"
+                                            android:onClick="inputUltimate"
+                                            android:textColor="@color/colorPrimaryDark" />
+                                    </TableRow>
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="@dimen/separator_width"
+                                        android:background="@color/colorPrimaryDark">
+
+                                    </TextView>
+
+                                    <TableRow
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1">
+
+                                        <TextView
+                                            android:id="@+id/a231"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:contentDescription="@string/content_description_231"
+                                            android:gravity="center"
+                                            android:soundEffectsEnabled="false"
+                                            android:onClick="inputUltimate"
+                                            android:textColor="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:layout_width="@dimen/separator_width"
+                                            android:layout_height="match_parent"
+                                            android:background="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:id="@+id/a232"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:contentDescription="@string/content_description_232"
+                                            android:gravity="center"
+                                            android:soundEffectsEnabled="false"
+                                            android:onClick="inputUltimate"
+                                            android:textColor="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:layout_width="@dimen/separator_width"
+                                            android:layout_height="match_parent"
+                                            android:background="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:id="@+id/a233"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:contentDescription="@string/content_description_233"
+                                            android:gravity="center"
+                                            android:soundEffectsEnabled="false"
+                                            android:onClick="inputUltimate"
+                                            android:textColor="@color/colorPrimaryDark" />
+                                    </TableRow>
+
+                                </TableLayout>
+
+                                <TextView
+                                    android:id="@+id/t2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center"
+                                    android:textColor="@color/colorPrimaryDark"
+                                    android:soundEffectsEnabled="false"
+                                    android:onClick="inputClassic"
+                                    android:contentDescription="@string/content_description_t2"/>
+
+                            </ViewSwitcher>
+                        </FrameLayout>
+
+
+                        <TextView
+                            android:layout_width="@dimen/separator_width_big"
+                            android:layout_height="match_parent"
+                            android:background="@color/colorPrimaryDark" />
+
+
+                        <!--(1|3)-->
+                        <FrameLayout
+                            android:id="@+id/f3"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1">
+
+                            <ViewSwitcher
+                                android:id="@+id/v3"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_margin="@dimen/margin_small_very"
+                                android:background="@color/background_color">
+
+
+                                <TableLayout
+                                    android:id="@+id/a3"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <TableRow
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1">
+
+                                        <TextView
+                                            android:id="@+id/a311"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:contentDescription="@string/content_description_311"
+                                            android:gravity="center"
+                                            android:soundEffectsEnabled="false"
+                                            android:onClick="inputUltimate"
+                                            android:textColor="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:layout_width="@dimen/separator_width"
+                                            android:layout_height="match_parent"
+                                            android:background="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:id="@+id/a312"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:contentDescription="@string/content_description_312"
+                                            android:gravity="center"
+                                            android:soundEffectsEnabled="false"
+                                            android:onClick="inputUltimate"
+                                            android:textColor="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:layout_width="@dimen/separator_width"
+                                            android:layout_height="match_parent"
+                                            android:background="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:id="@+id/a313"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:contentDescription="@string/content_description_313"
+                                            android:gravity="center"
+                                            android:soundEffectsEnabled="false"
+                                            android:onClick="inputUltimate"
+                                            android:textColor="@color/colorPrimaryDark" />
+                                    </TableRow>
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="@dimen/separator_width"
+                                        android:background="@color/colorPrimaryDark">
+
+                                    </TextView>
+
+                                    <TableRow
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1">
+
+                                        <TextView
+                                            android:id="@+id/a321"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:contentDescription="@string/content_description_321"
+                                            android:gravity="center"
+                                            android:soundEffectsEnabled="false"
+                                            android:onClick="inputUltimate"
+                                            android:textColor="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:layout_width="@dimen/separator_width"
+                                            android:layout_height="match_parent"
+                                            android:background="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:id="@+id/a322"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:contentDescription="@string/content_description_322"
+                                            android:gravity="center"
+                                            android:soundEffectsEnabled="false"
+                                            android:onClick="inputUltimate"
+                                            android:textColor="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:layout_width="@dimen/separator_width"
+                                            android:layout_height="match_parent"
+                                            android:background="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:id="@+id/a323"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:contentDescription="@string/content_description_323"
+                                            android:gravity="center"
+                                            android:soundEffectsEnabled="false"
+                                            android:onClick="inputUltimate"
+                                            android:textColor="@color/colorPrimaryDark" />
+                                    </TableRow>
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="@dimen/separator_width"
+                                        android:background="@color/colorPrimaryDark">
+
+                                    </TextView>
+
+                                    <TableRow
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1">
+
+                                        <TextView
+                                            android:id="@+id/a331"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:contentDescription="@string/content_description_331"
+                                            android:gravity="center"
+                                            android:soundEffectsEnabled="false"
+                                            android:onClick="inputUltimate"
+                                            android:textColor="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:layout_width="@dimen/separator_width"
+                                            android:layout_height="match_parent"
+                                            android:background="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:id="@+id/a332"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:contentDescription="@string/content_description_332"
+                                            android:gravity="center"
+                                            android:soundEffectsEnabled="false"
+                                            android:onClick="inputUltimate"
+                                            android:textColor="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:layout_width="@dimen/separator_width"
+                                            android:layout_height="match_parent"
+                                            android:background="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:id="@+id/a333"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:contentDescription="@string/content_description_333"
+                                            android:gravity="center"
+                                            android:soundEffectsEnabled="false"
+                                            android:onClick="inputUltimate"
+                                            android:textColor="@color/colorPrimaryDark" />
+                                    </TableRow>
+
+                                </TableLayout>
+
+                                <TextView
+                                    android:id="@+id/t3"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center"
+                                    android:textColor="@color/colorPrimaryDark"
+                                    android:soundEffectsEnabled="false"
+                                    android:onClick="inputClassic"
+                                    android:contentDescription="@string/content_description_t3"/>
+
+                            </ViewSwitcher>
+                        </FrameLayout>
+
+
+                    </TableRow>
+
+
+                    <!-- First horizontal Separator-->
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/separator_width_big"
+                        android:background="@color/colorPrimaryDark">
+
+                    </View>
+
+
+                    <!-- SECOND ROW-->
+                    <TableRow
+                        android:id="@+id/r2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:weightSum="3">
+
+
+                        <!--(2|1)-->
+                        <FrameLayout
+                            android:id="@+id/f4"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1">
+
+                            <ViewSwitcher
+                                android:id="@+id/v4"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_margin="@dimen/margin_small_very"
+                                android:background="@color/background_color">
+
+                                <TableLayout
+                                    android:id="@+id/a4"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <TableRow
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1">
+
+                                        <TextView
+                                            android:id="@+id/a411"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:contentDescription="@string/content_description_411"
+                                            android:gravity="center"
+                                            android:soundEffectsEnabled="false"
+                                            android:onClick="inputUltimate"
+                                            android:textColor="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:layout_width="@dimen/separator_width"
+                                            android:layout_height="match_parent"
+                                            android:background="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:id="@+id/a412"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:contentDescription="@string/content_description_412"
+                                            android:gravity="center"
+                                            android:soundEffectsEnabled="false"
+                                            android:onClick="inputUltimate"
+                                            android:textColor="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:layout_width="@dimen/separator_width"
+                                            android:layout_height="match_parent"
+                                            android:background="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:id="@+id/a413"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:contentDescription="@string/content_description_413"
+                                            android:gravity="center"
+                                            android:soundEffectsEnabled="false"
+                                            android:onClick="inputUltimate"
+                                            android:textColor="@color/colorPrimaryDark" />
+                                    </TableRow>
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="@dimen/separator_width"
+                                        android:background="@color/colorPrimaryDark">
+
+                                    </TextView>
+
+                                    <TableRow
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1">
+
+                                        <TextView
+                                            android:id="@+id/a421"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:contentDescription="@string/content_description_421"
+                                            android:gravity="center"
+                                            android:soundEffectsEnabled="false"
+                                            android:onClick="inputUltimate"
+                                            android:textColor="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:layout_width="@dimen/separator_width"
+                                            android:layout_height="match_parent"
+                                            android:background="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:id="@+id/a422"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:contentDescription="@string/content_description_422"
+                                            android:gravity="center"
+                                            android:soundEffectsEnabled="false"
+                                            android:onClick="inputUltimate"
+                                            android:textColor="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:layout_width="@dimen/separator_width"
+                                            android:layout_height="match_parent"
+                                            android:background="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:id="@+id/a423"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:contentDescription="@string/content_description_423"
+                                            android:gravity="center"
+                                            android:soundEffectsEnabled="false"
+                                            android:onClick="inputUltimate"
+                                            android:textColor="@color/colorPrimaryDark" />
+                                    </TableRow>
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="@dimen/separator_width"
+                                        android:background="@color/colorPrimaryDark">
+
+                                    </TextView>
+
+                                    <TableRow
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1">
+
+                                        <TextView
+                                            android:id="@+id/a431"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:contentDescription="@string/content_description_431"
+                                            android:gravity="center"
+                                            android:soundEffectsEnabled="false"
+                                            android:onClick="inputUltimate"
+                                            android:textColor="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:layout_width="@dimen/separator_width"
+                                            android:layout_height="match_parent"
+                                            android:background="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:id="@+id/a432"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:contentDescription="@string/content_description_432"
+                                            android:gravity="center"
+                                            android:soundEffectsEnabled="false"
+                                            android:onClick="inputUltimate"
+                                            android:textColor="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:layout_width="@dimen/separator_width"
+                                            android:layout_height="match_parent"
+                                            android:background="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:id="@+id/a433"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:contentDescription="@string/content_description_433"
+                                            android:gravity="center"
+                                            android:soundEffectsEnabled="false"
+                                            android:onClick="inputUltimate"
+                                            android:textColor="@color/colorPrimaryDark" />
+                                    </TableRow>
+
+                                </TableLayout>
+
+                                <TextView
+                                    android:id="@+id/t4"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center"
+                                    android:textColor="@color/colorPrimaryDark"
+                                    android:soundEffectsEnabled="false"
+                                    android:onClick="inputClassic"
+                                    android:contentDescription="@string/content_description_t4"/>
+
+                            </ViewSwitcher>
+                        </FrameLayout>
+
+
+                        <TextView
+                            android:layout_width="@dimen/separator_width_big"
+                            android:layout_height="match_parent"
+                            android:background="@color/colorPrimaryDark" />
+
+
+                        <!--(2|2)-->
+                        <FrameLayout
+                            android:id="@+id/f5"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1">
+
+                            <ViewSwitcher
+                                android:id="@+id/v5"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_margin="@dimen/margin_small_very"
+                                android:background="@color/background_color">
+
+                                <TableLayout
+                                    android:id="@+id/a5"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <TableRow
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1">
+
+                                        <TextView
+                                            android:id="@+id/a511"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:contentDescription="@string/content_description_511"
+                                            android:gravity="center"
+                                            android:soundEffectsEnabled="false"
+                                            android:onClick="inputUltimate"
+                                            android:textColor="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:layout_width="@dimen/separator_width"
+                                            android:layout_height="match_parent"
+                                            android:background="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:id="@+id/a512"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:contentDescription="@string/content_description_512"
+                                            android:gravity="center"
+                                            android:soundEffectsEnabled="false"
+                                            android:onClick="inputUltimate"
+                                            android:textColor="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:layout_width="@dimen/separator_width"
+                                            android:layout_height="match_parent"
+                                            android:background="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:id="@+id/a513"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:contentDescription="@string/content_description_513"
+                                            android:gravity="center"
+                                            android:soundEffectsEnabled="false"
+                                            android:onClick="inputUltimate"
+                                            android:textColor="@color/colorPrimaryDark" />
+                                    </TableRow>
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="@dimen/separator_width"
+                                        android:background="@color/colorPrimaryDark">
+
+                                    </TextView>
+
+                                    <TableRow
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1">
+
+                                        <TextView
+                                            android:id="@+id/a521"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:contentDescription="@string/content_description_521"
+                                            android:gravity="center"
+                                            android:soundEffectsEnabled="false"
+                                            android:onClick="inputUltimate"
+                                            android:textColor="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:layout_width="@dimen/separator_width"
+                                            android:layout_height="match_parent"
+                                            android:background="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:id="@+id/a522"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:contentDescription="@string/content_description_522"
+                                            android:gravity="center"
+                                            android:soundEffectsEnabled="false"
+                                            android:onClick="inputUltimate"
+                                            android:textColor="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:layout_width="@dimen/separator_width"
+                                            android:layout_height="match_parent"
+                                            android:background="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:id="@+id/a523"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:contentDescription="@string/content_description_523"
+                                            android:gravity="center"
+                                            android:soundEffectsEnabled="false"
+                                            android:onClick="inputUltimate"
+                                            android:textColor="@color/colorPrimaryDark" />
+                                    </TableRow>
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="@dimen/separator_width"
+                                        android:background="@color/colorPrimaryDark">
+
+                                    </TextView>
+
+                                    <TableRow
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1">
+
+                                        <TextView
+                                            android:id="@+id/a531"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:contentDescription="@string/content_description_531"
+                                            android:gravity="center"
+                                            android:soundEffectsEnabled="false"
+                                            android:onClick="inputUltimate"
+                                            android:textColor="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:layout_width="@dimen/separator_width"
+                                            android:layout_height="match_parent"
+                                            android:background="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:id="@+id/a532"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:contentDescription="@string/content_description_532"
+                                            android:gravity="center"
+                                            android:soundEffectsEnabled="false"
+                                            android:onClick="inputUltimate"
+                                            android:textColor="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:layout_width="@dimen/separator_width"
+                                            android:layout_height="match_parent"
+                                            android:background="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:id="@+id/a533"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:contentDescription="@string/content_description_533"
+                                            android:gravity="center"
+                                            android:soundEffectsEnabled="false"
+                                            android:onClick="inputUltimate"
+                                            android:textColor="@color/colorPrimaryDark" />
+                                    </TableRow>
+
+                                </TableLayout>
+
+                                <TextView
+                                    android:id="@+id/t5"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center"
+                                    android:textColor="@color/colorPrimaryDark"
+                                    android:soundEffectsEnabled="false"
+                                    android:onClick="inputClassic"
+                                    android:contentDescription="@string/content_description_t5"/>
+
+                            </ViewSwitcher>
+                        </FrameLayout>
+
+
+                        <TextView
+                            android:layout_width="@dimen/separator_width_big"
+                            android:layout_height="match_parent"
+                            android:background="@color/colorPrimaryDark" />
+
+
+                        <!--(2|3)-->
+                        <FrameLayout
+                            android:id="@+id/f6"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1">
+
+                            <ViewSwitcher
+                                android:id="@+id/v6"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_margin="@dimen/margin_small_very"
+                                android:background="@color/background_color">
+
+                                <TableLayout
+                                    android:id="@+id/a6"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <TableRow
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1">
+
+                                        <TextView
+                                            android:id="@+id/a611"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:contentDescription="@string/content_description_611"
+                                            android:gravity="center"
+                                            android:soundEffectsEnabled="false"
+                                            android:onClick="inputUltimate"
+                                            android:textColor="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:layout_width="@dimen/separator_width"
+                                            android:layout_height="match_parent"
+                                            android:background="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:id="@+id/a612"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:contentDescription="@string/content_description_612"
+                                            android:gravity="center"
+                                            android:soundEffectsEnabled="false"
+                                            android:onClick="inputUltimate"
+                                            android:textColor="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:layout_width="@dimen/separator_width"
+                                            android:layout_height="match_parent"
+                                            android:background="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:id="@+id/a613"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:contentDescription="@string/content_description_613"
+                                            android:gravity="center"
+                                            android:soundEffectsEnabled="false"
+                                            android:onClick="inputUltimate"
+                                            android:textColor="@color/colorPrimaryDark" />
+                                    </TableRow>
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="@dimen/separator_width"
+                                        android:background="@color/colorPrimaryDark">
+
+                                    </TextView>
+
+                                    <TableRow
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1">
+
+                                        <TextView
+                                            android:id="@+id/a621"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:contentDescription="@string/content_description_621"
+                                            android:gravity="center"
+                                            android:soundEffectsEnabled="false"
+                                            android:onClick="inputUltimate"
+                                            android:textColor="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:layout_width="@dimen/separator_width"
+                                            android:layout_height="match_parent"
+                                            android:background="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:id="@+id/a622"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:contentDescription="@string/content_description_622"
+                                            android:gravity="center"
+                                            android:soundEffectsEnabled="false"
+                                            android:onClick="inputUltimate"
+                                            android:textColor="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:layout_width="@dimen/separator_width"
+                                            android:layout_height="match_parent"
+                                            android:background="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:id="@+id/a623"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:contentDescription="@string/content_description_623"
+                                            android:gravity="center"
+                                            android:soundEffectsEnabled="false"
+                                            android:onClick="inputUltimate"
+                                            android:textColor="@color/colorPrimaryDark" />
+                                    </TableRow>
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="@dimen/separator_width"
+                                        android:background="@color/colorPrimaryDark">
+
+                                    </TextView>
+
+                                    <TableRow
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1">
+
+                                        <TextView
+                                            android:id="@+id/a631"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:contentDescription="@string/content_description_631"
+                                            android:gravity="center"
+                                            android:soundEffectsEnabled="false"
+                                            android:onClick="inputUltimate"
+                                            android:textColor="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:layout_width="@dimen/separator_width"
+                                            android:layout_height="match_parent"
+                                            android:background="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:id="@+id/a632"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:contentDescription="@string/content_description_632"
+                                            android:gravity="center"
+                                            android:soundEffectsEnabled="false"
+                                            android:onClick="inputUltimate"
+                                            android:textColor="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:layout_width="@dimen/separator_width"
+                                            android:layout_height="match_parent"
+                                            android:background="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:id="@+id/a633"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:contentDescription="@string/content_description_633"
+                                            android:gravity="center"
+                                            android:soundEffectsEnabled="false"
+                                            android:onClick="inputUltimate"
+                                            android:textColor="@color/colorPrimaryDark" />
+                                    </TableRow>
+
+                                </TableLayout>
+
+                                <TextView
+                                    android:id="@+id/t6"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center"
+                                    android:textColor="@color/colorPrimaryDark"
+                                    android:soundEffectsEnabled="false"
+                                    android:onClick="inputClassic"
+                                    android:contentDescription="@string/content_description_t6"/>
+
+                            </ViewSwitcher>
+                        </FrameLayout>
+
+
+                    </TableRow>
+
+
+                    <!-- Second horizontal Separator-->
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/separator_width_big"
+                        android:background="@color/colorPrimaryDark">
+
+                    </View>
+
+
+                    <!-- THIRD ROW-->
+                    <TableRow
+                        android:id="@+id/r3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:weightSum="3">
+
+
+                        <!--(3|1)-->
+                        <FrameLayout
+                            android:id="@+id/f7"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1">
+
+                            <ViewSwitcher
+                                android:id="@+id/v7"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_margin="@dimen/margin_small_very"
+                                android:background="@color/background_color">
+
+                                <TableLayout
+                                    android:id="@+id/a7"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <TableRow
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1">
+
+                                        <TextView
+                                            android:id="@+id/a711"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:contentDescription="@string/content_description_711"
+                                            android:gravity="center"
+                                            android:soundEffectsEnabled="false"
+                                            android:onClick="inputUltimate"
+                                            android:textColor="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:layout_width="@dimen/separator_width"
+                                            android:layout_height="match_parent"
+                                            android:background="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:id="@+id/a712"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:contentDescription="@string/content_description_712"
+                                            android:gravity="center"
+                                            android:soundEffectsEnabled="false"
+                                            android:onClick="inputUltimate"
+                                            android:textColor="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:layout_width="@dimen/separator_width"
+                                            android:layout_height="match_parent"
+                                            android:background="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:id="@+id/a713"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:contentDescription="@string/content_description_713"
+                                            android:gravity="center"
+                                            android:soundEffectsEnabled="false"
+                                            android:onClick="inputUltimate"
+                                            android:textColor="@color/colorPrimaryDark" />
+                                    </TableRow>
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="@dimen/separator_width"
+                                        android:background="@color/colorPrimaryDark">
+
+                                    </TextView>
+
+                                    <TableRow
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1">
+
+                                        <TextView
+                                            android:id="@+id/a721"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:contentDescription="@string/content_description_721"
+                                            android:gravity="center"
+                                            android:soundEffectsEnabled="false"
+                                            android:onClick="inputUltimate"
+                                            android:textColor="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:layout_width="@dimen/separator_width"
+                                            android:layout_height="match_parent"
+                                            android:background="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:id="@+id/a722"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:contentDescription="@string/content_description_722"
+                                            android:gravity="center"
+                                            android:soundEffectsEnabled="false"
+                                            android:onClick="inputUltimate"
+                                            android:textColor="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:layout_width="@dimen/separator_width"
+                                            android:layout_height="match_parent"
+                                            android:background="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:id="@+id/a723"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:contentDescription="@string/content_description_723"
+                                            android:gravity="center"
+                                            android:soundEffectsEnabled="false"
+                                            android:onClick="inputUltimate"
+                                            android:textColor="@color/colorPrimaryDark" />
+                                    </TableRow>
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="@dimen/separator_width"
+                                        android:background="@color/colorPrimaryDark">
+
+                                    </TextView>
+
+                                    <TableRow
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1">
+
+                                        <TextView
+                                            android:id="@+id/a731"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:contentDescription="@string/content_description_731"
+                                            android:gravity="center"
+                                            android:soundEffectsEnabled="false"
+                                            android:onClick="inputUltimate"
+                                            android:textColor="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:layout_width="@dimen/separator_width"
+                                            android:layout_height="match_parent"
+                                            android:background="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:id="@+id/a732"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:contentDescription="@string/content_description_732"
+                                            android:gravity="center"
+                                            android:soundEffectsEnabled="false"
+                                            android:onClick="inputUltimate"
+                                            android:textColor="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:layout_width="@dimen/separator_width"
+                                            android:layout_height="match_parent"
+                                            android:background="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:id="@+id/a733"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:contentDescription="@string/content_description_733"
+                                            android:gravity="center"
+                                            android:soundEffectsEnabled="false"
+                                            android:onClick="inputUltimate"
+                                            android:textColor="@color/colorPrimaryDark" />
+                                    </TableRow>
+
+                                </TableLayout>
+
+                                <TextView
+                                    android:id="@+id/t7"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center"
+                                    android:textColor="@color/colorPrimaryDark"
+                                    android:soundEffectsEnabled="false"
+                                    android:onClick="inputClassic"
+                                    android:contentDescription="@string/content_description_t7"/>
+
+                            </ViewSwitcher>
+                        </FrameLayout>
+
+
+                        <TextView
+                            android:layout_width="@dimen/separator_width_big"
+                            android:layout_height="match_parent"
+                            android:background="@color/colorPrimaryDark" />
+
+
+                        <!--(3|2)-->
+                        <FrameLayout
+                            android:id="@+id/f8"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1">
+
+                            <ViewSwitcher
+                                android:id="@+id/v8"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_margin="@dimen/margin_small_very"
+                                android:background="@color/background_color">
+
+                                <TableLayout
+                                    android:id="@+id/a8"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <TableRow
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1">
+
+                                        <TextView
+                                            android:id="@+id/a811"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:contentDescription="@string/content_description_811"
+                                            android:gravity="center"
+                                            android:soundEffectsEnabled="false"
+                                            android:onClick="inputUltimate"
+                                            android:textColor="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:layout_width="@dimen/separator_width"
+                                            android:layout_height="match_parent"
+                                            android:background="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:id="@+id/a812"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:contentDescription="@string/content_description_812"
+                                            android:gravity="center"
+                                            android:soundEffectsEnabled="false"
+                                            android:onClick="inputUltimate"
+                                            android:textColor="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:layout_width="@dimen/separator_width"
+                                            android:layout_height="match_parent"
+                                            android:background="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:id="@+id/a813"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:contentDescription="@string/content_description_813"
+                                            android:gravity="center"
+                                            android:soundEffectsEnabled="false"
+                                            android:onClick="inputUltimate"
+                                            android:textColor="@color/colorPrimaryDark" />
+                                    </TableRow>
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="@dimen/separator_width"
+                                        android:background="@color/colorPrimaryDark">
+
+                                    </TextView>
+
+                                    <TableRow
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1">
+
+                                        <TextView
+                                            android:id="@+id/a821"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:contentDescription="@string/content_description_821"
+                                            android:gravity="center"
+                                            android:soundEffectsEnabled="false"
+                                            android:onClick="inputUltimate"
+                                            android:textColor="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:layout_width="@dimen/separator_width"
+                                            android:layout_height="match_parent"
+                                            android:background="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:id="@+id/a822"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:contentDescription="@string/content_description_822"
+                                            android:gravity="center"
+                                            android:soundEffectsEnabled="false"
+                                            android:onClick="inputUltimate"
+                                            android:textColor="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:layout_width="@dimen/separator_width"
+                                            android:layout_height="match_parent"
+                                            android:background="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:id="@+id/a823"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:contentDescription="@string/content_description_823"
+                                            android:gravity="center"
+                                            android:soundEffectsEnabled="false"
+                                            android:onClick="inputUltimate"
+                                            android:textColor="@color/colorPrimaryDark" />
+                                    </TableRow>
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="@dimen/separator_width"
+                                        android:background="@color/colorPrimaryDark">
+
+                                    </TextView>
+
+                                    <TableRow
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1">
+
+                                        <TextView
+                                            android:id="@+id/a831"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:contentDescription="@string/content_description_831"
+                                            android:gravity="center"
+                                            android:soundEffectsEnabled="false"
+                                            android:onClick="inputUltimate"
+                                            android:textColor="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:layout_width="@dimen/separator_width"
+                                            android:layout_height="match_parent"
+                                            android:background="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:id="@+id/a832"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:contentDescription="@string/content_description_832"
+                                            android:gravity="center"
+                                            android:soundEffectsEnabled="false"
+                                            android:onClick="inputUltimate"
+                                            android:textColor="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:layout_width="@dimen/separator_width"
+                                            android:layout_height="match_parent"
+                                            android:background="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:id="@+id/a833"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:contentDescription="@string/content_description_833"
+                                            android:gravity="center"
+                                            android:soundEffectsEnabled="false"
+                                            android:onClick="inputUltimate"
+                                            android:textColor="@color/colorPrimaryDark" />
+                                    </TableRow>
+
+                                </TableLayout>
+
+                                <TextView
+                                    android:id="@+id/t8"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center"
+                                    android:textColor="@color/colorPrimaryDark"
+                                    android:soundEffectsEnabled="false"
+                                    android:onClick="inputClassic"
+                                    android:contentDescription="@string/content_description_t8"/>
+
+                            </ViewSwitcher>
+                        </FrameLayout>
+
+
+                        <TextView
+                            android:layout_width="@dimen/separator_width_big"
+                            android:layout_height="match_parent"
+                            android:background="@color/colorPrimaryDark" />
+
+
+                        <!--(3|3)-->
+                        <FrameLayout
+                            android:id="@+id/f9"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1">
+
+                            <ViewSwitcher
+                                android:id="@+id/v9"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_margin="@dimen/margin_small_very"
+                                android:background="@color/background_color">
+
+                                <TableLayout
+                                    android:id="@+id/a9"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <TableRow
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1">
+
+                                        <TextView
+                                            android:id="@+id/a911"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:contentDescription="@string/content_description_911"
+                                            android:gravity="center"
+                                            android:soundEffectsEnabled="false"
+                                            android:onClick="inputUltimate"
+                                            android:textColor="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:layout_width="@dimen/separator_width"
+                                            android:layout_height="match_parent"
+                                            android:background="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:id="@+id/a912"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:contentDescription="@string/content_description_912"
+                                            android:gravity="center"
+                                            android:soundEffectsEnabled="false"
+                                            android:onClick="inputUltimate"
+                                            android:textColor="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:layout_width="@dimen/separator_width"
+                                            android:layout_height="match_parent"
+                                            android:background="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:id="@+id/a913"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:contentDescription="@string/content_description_913"
+                                            android:gravity="center"
+                                            android:soundEffectsEnabled="false"
+                                            android:onClick="inputUltimate"
+                                            android:textColor="@color/colorPrimaryDark" />
+                                    </TableRow>
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="@dimen/separator_width"
+                                        android:background="@color/colorPrimaryDark">
+
+                                    </TextView>
+
+                                    <TableRow
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1">
+
+                                        <TextView
+                                            android:id="@+id/a921"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:contentDescription="@string/content_description_921"
+                                            android:gravity="center"
+                                            android:soundEffectsEnabled="false"
+                                            android:onClick="inputUltimate"
+                                            android:textColor="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:layout_width="@dimen/separator_width"
+                                            android:layout_height="match_parent"
+                                            android:background="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:id="@+id/a922"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:contentDescription="@string/content_description_922"
+                                            android:gravity="center"
+                                            android:soundEffectsEnabled="false"
+                                            android:onClick="inputUltimate"
+                                            android:textColor="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:layout_width="@dimen/separator_width"
+                                            android:layout_height="match_parent"
+                                            android:background="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:id="@+id/a923"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:contentDescription="@string/content_description_923"
+                                            android:gravity="center"
+                                            android:soundEffectsEnabled="false"
+                                            android:onClick="inputUltimate"
+                                            android:textColor="@color/colorPrimaryDark" />
+                                    </TableRow>
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="@dimen/separator_width"
+                                        android:background="@color/colorPrimaryDark">
+
+                                    </TextView>
+
+                                    <TableRow
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1">
+
+                                        <TextView
+                                            android:id="@+id/a931"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:contentDescription="@string/content_description_931"
+                                            android:gravity="center"
+                                            android:soundEffectsEnabled="false"
+                                            android:onClick="inputUltimate"
+                                            android:textColor="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:layout_width="@dimen/separator_width"
+                                            android:layout_height="match_parent"
+                                            android:background="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:id="@+id/a932"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:contentDescription="@string/content_description_932"
+                                            android:gravity="center"
+                                            android:soundEffectsEnabled="false"
+                                            android:onClick="inputUltimate"
+                                            android:textColor="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:layout_width="@dimen/separator_width"
+                                            android:layout_height="match_parent"
+                                            android:background="@color/colorPrimaryDark" />
+
+                                        <TextView
+                                            android:id="@+id/a933"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:contentDescription="@string/content_description_933"
+                                            android:gravity="center"
+                                            android:soundEffectsEnabled="false"
+                                            android:onClick="inputUltimate"
+                                            android:textColor="@color/colorPrimaryDark" />
+                                    </TableRow>
+
+                                </TableLayout>
+
+                                <TextView
+                                    android:id="@+id/t9"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center"
+                                    android:textColor="@color/colorPrimaryDark"
+                                    android:soundEffectsEnabled="false"
+                                    android:onClick="inputClassic"
+                                    android:contentDescription="@string/content_description_t9"/>
+
+                            </ViewSwitcher>
+                        </FrameLayout>
+
+
+                    </TableRow>
+
+
+                </TableLayout>
+            </FrameLayout>
+
+
+        </android.support.constraint.ConstraintLayout>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

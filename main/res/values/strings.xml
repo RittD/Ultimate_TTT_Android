@@ -1,0 +1,224 @@
+<resources>
+
+    <!-- General-->
+    <string name="app_name" translatable="false">Ultimate Tic Tac Toe</string>
+    <string name="copyright" translatable="false">Copyright by Knight Studios 2018</string>
+
+
+    <!-- Start page-->
+    <string name="ttt_description">A big Tic Tac Toe field</string>
+    <string name="vs_player">Player vs. Player</string>
+    <string name="vs_AI">Player vs. AI</string>
+
+
+    <!-- Player Menu -->
+    <string name="menu">Menu</string>
+    <string name="name_player_1">Player 1:</string>
+    <string name="name_player_2">Player 2:</string>
+
+    <!-- VS AI -->
+    <string name="player">Player</string>
+    <string name="easy_ai">Easy AI</string>
+    <string name="hard_ai">Hard AI</string>
+
+
+    <string name="same_names">The players have the same name!</string>
+    <string name="error_color_choose">Check the color input!</string>
+
+    <string name="which_symbols">Symbols:</string>
+    <string name="classic_radio" translatable="false">X vs. O</string>
+    <string name="squares_radio" translatable="false">\u25A0 vs. \u25A1 </string>
+    <string name="circles_radio" translatable="false">\u25cf vs. \u25cb </string>
+    <string name="triangles_radio" translatable="false">\u25b2 vs. \u25b3 </string>
+
+
+    <string name="start_game">Start Game</string>
+
+    <string name="which_colors">Colors:</string>
+    <string name="black">Black</string>
+    <string name="red">Red</string>
+    <string name="blue">Blue</string>
+    <string name="green">Green</string>
+
+    <string name="which_mode">Game Mode:</string>
+    <string name="classic">Classic</string>
+    <string name="ultimate" translatable="false">Ultimate</string>
+
+    <string name="exit" type="id">Do you really want to quit?</string>
+
+
+    <!-- Game Activity-->
+    <string name="begins">begins</string>
+    <string name="default_player_1">Player 1</string>
+    <string name="default_player_2">Player 2</string>
+    <string name="default_score" translatable="false">0</string>
+
+
+    <!-- Content Descriptions cells -->
+    <string name="content_description_111" translatable="false">111</string>
+    <string name="content_description_112" translatable="false">112</string>
+    <string name="content_description_113" translatable="false">113</string>
+    <string name="content_description_121" translatable="false">121</string>
+    <string name="content_description_122" translatable="false">122</string>
+    <string name="content_description_123" translatable="false">123</string>
+    <string name="content_description_131" translatable="false">131</string>
+    <string name="content_description_132" translatable="false">132</string>
+    <string name="content_description_133" translatable="false">133</string>
+
+    <string name="content_description_211" translatable="false">211</string>
+    <string name="content_description_212" translatable="false">212</string>
+    <string name="content_description_213" translatable="false">213</string>
+    <string name="content_description_221" translatable="false">221</string>
+    <string name="content_description_222" translatable="false">222</string>
+    <string name="content_description_223" translatable="false">223</string>
+    <string name="content_description_231" translatable="false">231</string>
+    <string name="content_description_232" translatable="false">232</string>
+    <string name="content_description_233" translatable="false">233</string>
+
+    <string name="content_description_311" translatable="false">311</string>
+    <string name="content_description_312" translatable="false">312</string>
+    <string name="content_description_313" translatable="false">313</string>
+    <string name="content_description_321" translatable="false">321</string>
+    <string name="content_description_322" translatable="false">322</string>
+    <string name="content_description_323" translatable="false">323</string>
+    <string name="content_description_331" translatable="false">331</string>
+    <string name="content_description_332" translatable="false">332</string>
+    <string name="content_description_333" translatable="false">333</string>
+
+    <string name="content_description_411" translatable="false">411</string>
+    <string name="content_description_412" translatable="false">412</string>
+    <string name="content_description_413" translatable="false">413</string>
+    <string name="content_description_421" translatable="false">421</string>
+    <string name="content_description_422" translatable="false">422</string>
+    <string name="content_description_423" translatable="false">423</string>
+    <string name="content_description_431" translatable="false">431</string>
+    <string name="content_description_432" translatable="false">432</string>
+    <string name="content_description_433" translatable="false">433</string>
+
+    <string name="content_description_511" translatable="false">511</string>
+    <string name="content_description_512" translatable="false">512</string>
+    <string name="content_description_513" translatable="false">513</string>
+    <string name="content_description_521" translatable="false">521</string>
+    <string name="content_description_522" translatable="false">522</string>
+    <string name="content_description_523" translatable="false">523</string>
+    <string name="content_description_531" translatable="false">531</string>
+    <string name="content_description_532" translatable="false">532</string>
+    <string name="content_description_533" translatable="false">533</string>
+
+    <string name="content_description_611" translatable="false">611</string>
+    <string name="content_description_612" translatable="false">612</string>
+    <string name="content_description_613" translatable="false">613</string>
+    <string name="content_description_621" translatable="false">621</string>
+    <string name="content_description_622" translatable="false">622</string>
+    <string name="content_description_623" translatable="false">623</string>
+    <string name="content_description_631" translatable="false">631</string>
+    <string name="content_description_632" translatable="false">632</string>
+    <string name="content_description_633" translatable="false">633</string>
+
+    <string name="content_description_711" translatable="false">711</string>
+    <string name="content_description_712" translatable="false">712</string>
+    <string name="content_description_713" translatable="false">713</string>
+    <string name="content_description_721" translatable="false">721</string>
+    <string name="content_description_722" translatable="false">722</string>
+    <string name="content_description_723" translatable="false">723</string>
+    <string name="content_description_731" translatable="false">731</string>
+    <string name="content_description_732" translatable="false">732</string>
+    <string name="content_description_733" translatable="false">733</string>
+
+    <string name="content_description_811" translatable="false">811</string>
+    <string name="content_description_812" translatable="false">812</string>
+    <string name="content_description_813" translatable="false">813</string>
+    <string name="content_description_821" translatable="false">821</string>
+    <string name="content_description_822" translatable="false">822</string>
+    <string name="content_description_823" translatable="false">823</string>
+    <string name="content_description_831" translatable="false">831</string>
+    <string name="content_description_832" translatable="false">832</string>
+    <string name="content_description_833" translatable="false">833</string>
+
+    <string name="content_description_911" translatable="false">911</string>
+    <string name="content_description_912" translatable="false">912</string>
+    <string name="content_description_913" translatable="false">913</string>
+    <string name="content_description_921" translatable="false">921</string>
+    <string name="content_description_922" translatable="false">922</string>
+    <string name="content_description_923" translatable="false">923</string>
+    <string name="content_description_931" translatable="false">931</string>
+    <string name="content_description_932" translatable="false">932</string>
+    <string name="content_description_933" translatable="false">933</string>
+
+
+    <string name="content_description_t1" translatable="false">1</string>
+    <string name="content_description_t2" translatable="false">2</string>
+    <string name="content_description_t3" translatable="false">3</string>
+    <string name="content_description_t4" translatable="false">4</string>
+    <string name="content_description_t5" translatable="false">5</string>
+    <string name="content_description_t6" translatable="false">6</string>
+    <string name="content_description_t7" translatable="false">7</string>
+    <string name="content_description_t8" translatable="false">8</string>
+    <string name="content_description_t9" translatable="false">9</string>
+
+
+    <!-- Win Activity-->
+    <string name="insecure_description">Insecure manikin</string>
+    <string name="cup_description">The winner cup!</string>
+    <string name="sad_smiley">Crying emoji</string>
+    <string name="draw">Draw!</string>
+    <string name="won">won!</string>
+    <string name="restart_game">Restart</string>
+    <string name="new_game">New Game</string>
+    <string name="instructions">Instructions</string>
+
+    <!-- VS KI -->
+    <string name="you_won">You won!</string>
+    <string name="you_lost">You lost!</string>
+
+
+    <!-- Instructions Activity -->
+
+    <string name="instructions_headline">Instructions:</string>
+    <string name="classic_TTT"><u>Classic Tic Tac Toe:</u></string>
+    <string name="instructions_classic">
+        A randomly chosen player starts. Now the players alternately set their signs in one of the blank
+        cells of the 3*3 field.\n\n
+
+        The first player who can set <b>3 of his signs in a row, column or diagonal</b> of the field wins.\n
+        If neither of the players wins until the field is completely filled, it is a draw.
+     </string>
+    <string name="ultimate_TTT"><u>Ultimate Tic Tac Toe:</u></string>
+    <string name="instructions_ultimate">
+         <i>(We recommend to play some matches in classic mode before you try this mode.)</i>\n\n
+
+        This game mode is based on the classic Tic Tac Toe. The biggest difference is the field:
+        In this mode every cell of the field consists of another small Tic Tac Toe field. To win
+        the game you have to win the small fields (with classic Tic Tac Toe rules) to mark them
+        with your sign. If you have <b>3 cells in a row, column or diagonal</b> you win this game.\n\n
+
+        If both player cannot achieve this, the number of the small fields won by a player decides
+        who wins. The game is a draw, if these numbers are the same.\n\n
+
+        The last difference is that a player always has to put his sign in the cell where the
+        last player has sent him to (orange marked).\n\n
+        For example, if Player 1 puts his sign in the bottom left corner of a
+        cell, then Player 2 has to put his sign somewhere in the cell bottom left.\n
+        If this cell is
+        already blocked, he can choose freely where to put his sign.
+    </string>
+    <string name="have_fun">
+        Have fun!\n
+        <i>-Your Knight Studios Team</i>
+    </string>
+
+
+    <!-- Settings Activity -->
+    <string name="music_switch">Music on/off </string>
+    <string name="action_settings">Settings</string>
+    <string name="music_credits">Music by Kid Cholera</string>
+    <string name="sound_switch">Sounds on/off</string>
+    <string name="sound_credits">Sounds by knisterklein &amp; Joe Lamb</string>
+    <string name="animation_credits">Animations by Umair Vatao</string>
+    <string name="logo" translatable="false">Knight Studios Logo</string>
+    <string name="feedback">Feedback</string>
+    <string name="play_store">Write review</string>
+    <string name="mail">Send mail</string>
+    <string name="send_mail">Sending mail…</string>
+
+</resources>

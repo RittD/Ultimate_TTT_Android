@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/background_color">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        app:titleTextColor="@color/whiteText"
+        app:titleTextAppearance="@style/Toolbar.TitleText" />
+
+
+    <ScrollView
+        android:id="@+id/instructions_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin">
+
+                <TextView
+                    android:id="@+id/instructions_headline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="@string/instructions_headline"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/text_size_big_extra" />
+
+                <TextView
+                    android:id="@+id/classicTTT"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/instructions_headline"
+                    android:layout_marginTop="@dimen/margin_medium"
+                    android:text="@string/classic_TTT"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/text_size_big" />
+
+                <TextView
+                    android:id="@+id/instructionsClassic"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/classicTTT"
+                    android:layout_marginTop="@dimen/margin"
+                    android:text="@string/instructions_classic"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/text_size_small" />
+
+
+                <TextView
+                    android:id="@+id/ultimateTTT"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/instructionsClassic"
+                    android:layout_marginTop="@dimen/margin_big"
+                    android:text="@string/ultimate_TTT"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/text_size_big" />
+
+                <TextView
+                    android:id="@+id/instructionsUltimate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/ultimateTTT"
+                    android:layout_marginTop="@dimen/margin"
+                    android:text="@string/instructions_ultimate"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/text_size_small" />
+
+                <TextView
+                    android:id="@+id/haveFun"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/instructionsUltimate"
+                    android:layout_marginTop="@dimen/margin_big"
+                    android:gravity="end"
+                    android:text="@string/have_fun"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/text_size" />
+
+                <TextView
+                    android:id="@+id/copyright"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/haveFun"
+                    android:layout_marginTop="@dimen/margin_big_extra"
+                    android:text="@string/copyright"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/text_size" />
+
+
+            </RelativeLayout>
+        </RelativeLayout>
+
+
+    </ScrollView>
+
+
+</RelativeLayout>

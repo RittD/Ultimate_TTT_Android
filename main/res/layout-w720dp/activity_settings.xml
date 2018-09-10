@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- the most prominent difference is the bigger copyright picture -->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/background_color">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        app:titleTextColor="@color/whiteText"
+        app:titleTextAppearance="@style/Toolbar.TitleText" />
+
+    <TextView
+        android:id="@+id/settings_headline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="@string/action_settings"
+        android:textColor="@color/text_color"
+        android:textSize="@dimen/text_size_big"
+        android:layout_marginTop="@dimen/margin"
+        android:layout_below="@id/toolbar"
+        android:textStyle="bold"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/margin"
+        android:layout_below="@id/settings_headline">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <Switch
+                android:id="@+id/music_switch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:onClick="toggleMusic"
+                android:text="@string/music_switch"
+                android:textSize="@dimen/text_size" />
+
+            <TextView
+                android:id="@+id/music_credits"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/music_switch"
+                android:layout_alignStart="@+id/music_switch"
+                android:layout_below="@id/music_switch"
+                android:layout_marginTop="@dimen/margin_small"
+                android:text="@string/music_credits"
+                android:textSize="@dimen/text_size_small" />
+
+            <Switch
+                android:id="@+id/sound_switch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/music_credits"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:onClick="toggleSound"
+                android:text="@string/sound_switch"
+                android:textSize="@dimen/text_size" />
+
+            <TextView
+                android:id="@+id/sound_credits"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/sound_switch"
+                android:layout_alignStart="@+id/sound_switch"
+                android:layout_below="@+id/sound_switch"
+                android:layout_marginTop="@dimen/margin_small"
+                android:text="@string/sound_credits"
+                android:textSize="@dimen/text_size_small" />
+
+
+            <TextView
+                android:id="@+id/animation_credits"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/sound_credits"
+                android:layout_marginTop="@dimen/margin"
+                android:textSize="@dimen/text_size_small"
+                android:text="@string/animation_credits"/>
+
+            <LinearLayout
+                android:id="@+id/feedback"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/animation_credits"
+                android:orientation="vertical"
+                android:layout_marginTop="@dimen/margin_big"
+                android:background="@color/background_color_dark">
+
+                <TextView
+                    android:id="@+id/feedback_headline"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/feedback"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/text_size_big"
+                    android:layout_margin="@dimen/margin_small_very"/>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/margin_small_very">
+
+                    <Button
+                        android:id="@+id/button_review"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/play_store"
+                        android:layout_margin="@dimen/margin_small_very"
+                        android:onClick="startPlayStore"
+                        android:textSize="@dimen/text_size_small"
+                        android:textColor="@color/colorAccent"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/button_shape"/>
+
+                    <Button
+                        android:id="@+id/button_mail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/mail"
+                        android:layout_margin="@dimen/margin_small_very"
+                        android:onClick="sendMail"
+                        android:textSize="@dimen/text_size_small"
+                        android:textColor="@color/colorAccent"
+                        android:gravity="center"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/button_shape"/>
+                </TableRow>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_below="@id/feedback"
+                android:layout_marginTop="@dimen/margin_big">
+
+                <!-- necessary for the right proportions of the following views -->
+                <TableRow
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent">
+
+                    <ImageView
+                        android:id="@+id/logo"
+                        android:layout_width="@dimen/copyright_picture"
+                        android:layout_height="@dimen/copyright_picture"
+                        android:contentDescription="@string/logo"
+                        app:srcCompat="@drawable/knightstudios_logo_trans_500_500"
+                        android:layout_margin="@dimen/margin_small_very"/>
+
+                    <TextView
+                        android:id="@+id/copyright"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/margin_small"
+                        android:gravity="bottom"
+                        android:text="@string/copyright"
+                        android:textSize="@dimen/text_size" />
+
+                </TableRow>
+
+
+
+            </LinearLayout>
+        </RelativeLayout>
+
+
+    </ScrollView>
+</RelativeLayout>

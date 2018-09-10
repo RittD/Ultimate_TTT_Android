@@ -1,0 +1,19 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.daniel.ultimateTicTacToe.MainActivity">
+
+
+    <item
+        android:id="@+id/action_instructions"
+        android:icon="@drawable/owl_tablet"
+        android:title="@string/instructions"
+        app:showAsAction="ifRoom"/>
+
+
+    <item android:id="@+id/action_settings"
+        android:title="@string/action_settings"
+        android:icon="@drawable/settings"
+        app:showAsAction="ifRoom"/>
+
+</menu>

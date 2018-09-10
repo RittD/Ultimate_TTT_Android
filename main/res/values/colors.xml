@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorAccent">#EE9900</color>
+    <color name="colorAccent_light">#CCEE9900</color>
+
+    <color name="colorPrimary">#272727</color>
+    <color name="colorPrimaryDark">#000</color>
+
+    <color name="background_color">#EEE</color>
+    <color name="background_color_dark">#CCC</color>
+    <color name="background_feedback">#BBB</color>
+
+    <color name="blocked_field_background">#707070</color>
+    <color name="black">#000</color>
+    <color name="red">#8A0808</color>
+    <color name="blue">#051A90</color>
+    <color name="green">#085008</color>
+
+    <color name="text_color">#000</color>
+    <color name="whiteText">#FFF</color>
+
+</resources>

@@ -1,0 +1,35 @@
+<resources>
+    <!-- Margins -->
+    <dimen name="margin_small_very">        5dp     </dimen>
+    <dimen name="margin_small">             8dp     </dimen>
+    <dimen name="margin">                   12dp    </dimen>
+    <dimen name="margin_medium">            15dp    </dimen>
+    <dimen name="margin_medium_plus">       20dp    </dimen>
+    <dimen name="margin_big">               35dp    </dimen>
+    <dimen name="margin_big_extra">         45dp    </dimen>
+
+    
+    <!-- Text Sizes -->
+    <dimen name="text_size_small">          18sp    </dimen>
+    <dimen name="text_size">                22sp    </dimen>
+    <dimen name="text_size_big">            24sp    </dimen>
+    <dimen name="text_size_big_extra">      32sp    </dimen>
+
+
+    <!-- Toolbar (height not used)-->
+    <dimen name="toolbar_height">            56dp    </dimen>
+    <dimen name="min_distance_buttons">      50dp    </dimen>
+    <dimen name="max_distance_buttons">      70dp    </dimen>
+    <dimen name="distance_buttons">          60dp    </dimen>
+
+
+    <!-- Button height -->
+    <dimen name="button_height">             50dp    </dimen>
+
+    <!-- Field -->
+    <dimen name="separator_width">           2dp     </dimen>
+    <dimen name="separator_width_big">       5dp     </dimen>
+
+    <!-- Picture size -->
+    <dimen name="copyright_picture">         120dp   </dimen>
+</resources>

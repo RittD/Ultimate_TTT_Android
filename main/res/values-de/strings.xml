@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Start page-->
+    <string name="ttt_description">Ein großes Tic Tac Toe Feld</string>
+    <string name="vs_player">2 Spieler</string>
+    <string name="vs_AI">Spieler gegen KI</string>
+    <string name="exit">Willst Du das Spiel wirklich beenden?</string>
+
+    <!-- Player Menue -->
+    <string name="menu">Menü</string>
+    <string name="name_player_1">Spieler 1:</string>
+    <string name="name_player_2">Spieler 2:</string>
+    <string name="same_names">Die Spieler haben den gleichen Namen!</string>
+    <string name="which_symbols">Symbole:</string>
+    <string name="start_game">Spiel starten</string>
+    <string name="which_colors">Farben:</string>
+    <string name="black">Schwarz</string>
+    <string name="red">Rot</string>
+    <string name="blue">Blau</string>
+    <string name="green">Grün</string>
+    <string name="which_mode">Spielmodus:</string>
+    <string name="classic">Klassisch</string>
+
+    <!-- VS AI -->
+    <string name="player">Spieler</string>
+    <string name="easy_ai">Einfache KI</string>
+    <string name="hard_ai">Schwere KI</string>
+
+
+
+
+    <!-- Game Activity-->
+    <string name="begins">beginnt</string>
+    <string name="default_player_1">Spieler 1</string>
+    <string name="default_player_2">Spieler 2</string>
+
+
+
+    <!-- Win Activity-->
+    <string name="insecure_description">Unentschiedenes Männchen</string>
+    <string name="cup_description">Der Gewinnerpokal!</string>
+    <string name="sad_smiley">Heulendes Smiley</string>
+    <string name="draw">Unentschieden!</string>
+    <string name="won">hat gewonnen!</string>
+    <string name="restart_game">Nochmal</string>
+    <string name="new_game">Neues Spiel</string>
+    <string name="instructions">Anleitung</string>
+
+    <!-- VS AI -->
+    <string name="you_won">Du hast gewonnen!</string>
+    <string name="you_lost">Du hast verloren!</string>
+
+
+
+    <!-- Instructions Activity -->
+    <string name="instructions_headline">Anleitung:</string>
+    <string name="classic_TTT"><u>Klassisches Tic Tac Toe:</u></string>
+    <string name="instructions_classic">
+        Ein zufällig ausgewählter Spieler beginnt. Nun setzen beide Spieler abwechselnd ihr Zeichen
+        in eines der freien Felder des 3*3 Spielfeldes.\n\n
+        Gewonnen hat der Spieler, der zuerst <b>3 Zeichen in einer Reihe, Spalte oder Diagonale</b>
+        des Feldes setzen konnte. Wenn dies beiden Spielern nicht gelingt,
+        bis das Spielfeld komplett gefüllt ist, geht das Spiel unentschieden aus.
+     </string>
+    <string name="ultimate_TTT"><u>Ultimate Tic Tac Toe:</u></string>
+    <string name="instructions_ultimate">
+        <i>(Wir empfehlen zuerst ein paar Runden klassisches Tic Tac Toe zu spielen!)</i>\n
+
+        Dieses Spiel basiert, wie der Name bereits vermuten lässt, auf dem klassischen Tic Tac Toe.
+        Was es allerdings besonders macht, ist die Tatsache, dass jedes freie Feld des normalen Tic Tac Toe
+        Feldes durch ein weiteres Tic Tac Toe Feld ersetzt wird. Das Spielziel ist es also nun,
+        das große Tic Tac Toe Feld zu gewinnen, indem man die kleinen Tic Tac Toe Felder (Teilfelder)
+        für sich entscheidet.\n\n
+
+        Wenn kein Spieler <b>3 Teilfelder in einer Reihe, Spalte oder Diagonale</b> für sich entscheiden kann,
+        gewinnt der Spieler, der mehr Felder gewonnen hat (siehe Punkteanzeige). Bei Gleichstand geht
+        das Spiel unentschieden aus.\n\n
+
+        Zusätzlich kommt noch eine neue Regel dazu:\n
+        Ein Spieler muss immer in das Teilfeld des Spielfeldes setzen, das der vorherige Spieler
+        mit seinem Zug vorgegeben hat (im Spiel orange markiert).\n\n
+        Wenn ein Spieler zum Beispiel in die untere linke Ecke eines Teilfelds setzt, muss der
+        nächste Spieler in das Teilfeld unten links setzen.\n\n
+        Wenn dieses Teilfeld bereits belegt ist,
+        darf er stattdessen in ein beliebiges Teilfeld setzen.
+
+    </string>
+    <string name="have_fun">
+        Viel Spaß beim Spielen!\n
+        <i>-Euer Knight Studios Team</i>
+    </string>
+
+
+
+
+    <!-- Settings Activity -->
+    <string name="music_switch">Musik an/aus </string>
+    <string name="action_settings">Einstellungen</string>
+    <string name="music_credits">Musik von Kid Cholera</string>
+    <string name="sound_switch">Sounds an/aus</string>
+    <string name="sound_credits">Sounds von knisterklein &amp; Joe Lamb</string>
+    <string name="animation_credits">Animationen von Umair Vatao</string>
+    <string name="feedback">Feedback</string>
+    <string name="play_store">Bewertung schreiben</string>
+    <string name="mail">E-Mail senden</string>
+    <string name="send_mail">Sende Mail…</string>
+</resources>

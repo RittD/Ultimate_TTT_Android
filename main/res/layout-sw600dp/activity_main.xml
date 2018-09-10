@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/background_color">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        app:titleTextColor="@color/whiteText"
+        app:titleTextAppearance="@style/Toolbar.TitleText" />
+
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar"
+        android:background="@color/background_color_dark">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimary"
+            android:layout_margin="@dimen/margin" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/margin_small_very"
+                android:orientation="vertical"
+                android:background="@color/background_color">
+
+                <ImageView
+                    android:id="@+id/ttt_field"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="@dimen/margin"
+                    android:layout_weight="4"
+                    android:contentDescription="@string/ttt_description"
+                    app:srcCompat="@drawable/ttt_start_983_984" />
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1">
+
+                    <Button
+                        android:id="@+id/vsPlayer"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/button_height"
+                        android:layout_margin="@dimen/margin"
+                        android:onClick="start2Players"
+                        android:text="@string/vs_player"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="@dimen/text_size"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/button_shape"
+                        android:elevation="@dimen/margin_small" />
+
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1">
+
+                    <Button
+                        android:id="@+id/vsKI"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/button_height"
+                        android:layout_margin="@dimen/margin"
+                        android:onClick="startKI"
+                        android:text="@string/vs_AI"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="@dimen/text_size"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/button_shape"
+                        android:elevation="@dimen/margin_small" />
+
+                </FrameLayout>
+
+
+            </LinearLayout>
+        </FrameLayout>
+    </FrameLayout>
+
+</RelativeLayout>
